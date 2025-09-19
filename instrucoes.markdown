@@ -1,0 +1,3 @@
+# A fazer:
+1. Fazer conexao com banco de dados e o sistema de cadastro e login
+2. Usar o sistema do fabinho (A classe Aluno) em vez da minha logico de login action, db.php etc...

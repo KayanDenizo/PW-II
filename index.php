@@ -1,10 +1,16 @@
+<?php 
+
+require 'Aluno.class.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
+    <title>Login e Cadastro</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -16,19 +22,18 @@
                     Login
                     <span class="underline"></span>
                 </button>
-                <form class="form form-login">
+                <form action="login_action.php" class="form form-login">
                     <fieldset>
-                        <legend>Please, enter your email and password for login.</legend>
                         <div class="input-block">
                             <label for="login-email">E-mail</label>
                             <input id="login-email" type="email" required>
                         </div>
                         <div class="input-block">
-                            <label for="login-password">Password</label>
+                            <label for="login-password">Senha</label>
                             <input id="login-password" type="password" required>
                         </div>
                     </fieldset>
-                    <button type="submit" class="btn-login">Login</button>
+                    <button type="submit" class="btn-login">Entrar</button>
                 </form>
             </div>
             <div class="form-wrapper">
@@ -36,19 +41,18 @@
                     Sign Up
                     <span class="underline"></span>
                 </button>
-                <form class="form form-signup">
+                <form action="signup_action.php" class="form form-signup">
                     <fieldset>
-                        <legend>Please, enter your email, password and password confirmation for sign up.</legend>
                         <div class="input-block">
                             <label for="signup-email">E-mail</label>
                             <input id="signup-email" type="email" required>
                         </div>
                         <div class="input-block">
-                            <label for="signup-password">Password</label>
+                            <label for="signup-password">Senha</label>
                             <input id="signup-password" type="password" required>
                         </div>
                         <div class="input-block">
-                            <label for="signup-password-confirm">Confirm password</label>
+                            <label for="signup-password-confirm">Confirme sua senha</label>
                             <input id="signup-password-confirm" type="password" required>
                         </div>
                     </fieldset>
