@@ -77,6 +77,51 @@ class Aluno{
         
     }
 
+    public function login($email, $senha){
+        $sql = "SELECT * FROM aluno WHERE email = :e";
+        $sql = $this->pdo->prepare($sql);
+        $sql->bindValue(":e", $email);
+        $sql->execute();
+        
+        if($sql->rowCount() > 0){
+            $dados = $sql->fetch();
+            if(password_verify($senha, $dados['senha'])){
+                // Preencher os atributos da classe com os dados do usuário
+                $this->id = $dados['id'];
+                $this->rm = $dados['rm'];
+                $this->nome = $dados['nome'];
+                $this->email = $dados['email'];
+                $this->cpf = $dados['cpf'];
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function verificarEmail($email){
+        return $this->consultar($email);
+    }
+
+    public function cadastrarComSenha($rm, $nome, $email, $cpf, $senha){
+        // Verificar se o email já existe
+        if($this->verificarEmail($email)){
+            return false; // Email já cadastrado
+        }
+        
+        $sql = "INSERT INTO aluno SET rm = :r, nome = :n, email = :e, cpf = :c, senha = :s";
+        $sql = $this->pdo->prepare($sql);
+        
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+        
+        $sql->bindValue(":r", $rm);
+        $sql->bindValue(":n", $nome);
+        $sql->bindValue(":e", $email);
+        $sql->bindValue(":c", $cpf);
+        $sql->bindValue(":s", $senhaHash);
+        
+        return $sql->execute();
+    }
+
 
 }
 
