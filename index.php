@@ -17,10 +17,11 @@ require 'config.php';
 <body>
     <h1>Banco XYZ</h1>
     <h3>Correntista</h3>
-    Titular: Kayan Denizo <br>
-    Agência: 123 <br>
-    Conta: 5050 <br>
-    Saldo: R$ 1,00 <br>
+    Titular: <?php 
+    echo $dados['titular']; ?> <br>
+    Agência: <?php echo $dados['agencia'] ?> <br>
+    Conta: <?php echo $dados['conta']; ?> <br>
+    Saldo: <?php echo $dados['saldo']; ?> <br>
 
     <a href="sair.php">Sair</a> <br>
     <hr>
