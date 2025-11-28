@@ -1,6 +1,6 @@
 <?php
 
-require 'config.php';
+require 'Banco.class.php';
 
 
 ?>
@@ -17,8 +17,8 @@ require 'config.php';
 <body>
     <h1>Banco XYZ</h1>
     <h3>Correntista</h3>
-    Titular: <?php 
-    echo $dados['titular']; ?> <br>
+    Titular: <?php
+                echo $dados['titular']; ?> <br>
     Agência: <?php echo $dados['agencia'] ?> <br>
     Conta: <?php echo $dados['conta']; ?> <br>
     Saldo: <?php echo $dados['saldo']; ?> <br>
